@@ -10,7 +10,10 @@ const varshaRoutes = require('./routes/varshaRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://website-4vbd.vercel.app', 
+    credentials: true 
+}));
 app.use(express.json());
 
 // Routes
