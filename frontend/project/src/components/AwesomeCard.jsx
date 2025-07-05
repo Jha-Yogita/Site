@@ -30,7 +30,9 @@ useEffect(() => {
 }, []);
   // Fetch awesome things from backend
   useEffect(() => {
-    fetch(API_BASE)
+    fetch(API_BASE, {
+      credentials: "include"
+    })
       .then((res) => res.json())
       .then((data) => setAwesomeThings(data))
       .catch((err) => console.error("Error fetching awesome things:", err));
