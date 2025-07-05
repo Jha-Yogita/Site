@@ -1,0 +1,12 @@
+.footer {
+  background: linear-gradient(90deg, #a855f7, #c084fc);
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-family: "Comic Sans MS", "Segoe UI Emoji", cursive;
+  font-size: 1.1rem;
+  box-shadow: 0 -4px 20px rgba(168, 85, 247, 0.3);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 40px;
+}

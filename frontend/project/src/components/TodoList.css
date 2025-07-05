@@ -1,0 +1,174 @@
+.todo-container {
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(167, 139, 250, 0.25);
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  transition: all 0.4s ease;
+}
+
+.todo-container.done {
+  border-left: 5px solid #a855f7;
+  background: rgba(248, 240, 252, 0.9);
+}
+
+.todo-container.done::before {
+  background: linear-gradient(to bottom, #a855f7, #c084fc);
+}
+
+.todo-container.todo {
+  border-left: 5px solid #ec4899;
+  background: rgba(253, 242, 248, 0.9);
+}
+
+.todo-container.todo::before {
+  background: linear-gradient(to bottom, #ec4899, #f472b6);
+}
+
+.todo-container h2 {
+  color: #5b21b6;
+  font-family: "Comic Sans MS", "Segoe UI Emoji", cursive;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-container li {
+  margin: 12px 0;
+  padding: 15px;
+  border-radius: 12px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-container li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #ec4899, #a855f7);
+}
+
+.todo-container li.done {
+  background: #f5f3ff;
+}
+
+.todo-container li.done span {
+
+  color: #7c3aed;
+  opacity: 0.8;
+}
+
+.todo-container li .checkbox {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #c084fc;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.todo-container li .checkbox:checked {
+  background-color: #a855f7;
+  border-color: #a855f7;
+}
+
+.todo-container li .checkbox:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #f472b6;
+  cursor: pointer;
+  margin-left: auto;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.input-section {
+  display: flex;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 2px solid #e9d5ff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.input-section input:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+}
+
+.input-section button {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@keyframes confetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.confetti {
+  position: absolute;
+  font-size: 1rem;
+  animation: confetti 1s linear forwards;
+  user-select: none;
+  pointer-events: none;
+}

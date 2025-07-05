@@ -1,0 +1,18 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #a6c1ee 0%, #fbc2eb 50%, #ffecd2 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Comic Sans MS", "Segoe UI Emoji", cursive;
+  scroll-behavior: smooth;
+}
+
+.app-container {
+
+  display: flex;
+  flex-direction: column;
+}
